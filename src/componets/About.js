@@ -27,7 +27,7 @@ export default function About() {
 
   return (
     <div className='container my-2' style={myStyle}>
-        <h1>View Changer</h1>
+        <h1 className='my-2'>View Changer</h1>
         <div className="accordion accordion-flush" id="accordionFlushExample">
         <div className="accordion-item">
         <h2 className="accordion-header">

@@ -12,6 +12,23 @@ export default function Textarea(props) {
     const clickOnClear = ()=>{
         setText("")
     }
+    const [colorChange,setColorChange] = useState({
+        color:'black'
+    })
+    const colorChanger = ()=>{
+        if(colorChange.color === 'red'){
+            setColorChange({
+                color:'black'
+            })
+            setBtnc("Change color to red")
+        }else{
+            setColorChange({
+                color:'red'
+            })
+            setBtnc("Change color to black")
+        }
+    }
+    const [btnc,setBtnc] = useState("Change color to red")
     const handleOnChange = (event)=>{
         setText(event.target.value)
     }
@@ -20,11 +37,11 @@ export default function Textarea(props) {
         <>
         <div className="mb-3 my-3">
         <h1>{props.heading}</h1>
-        <textarea className="form-control" value={text} onChange={handleOnChange} id="myText" rows="10"></textarea>
+        <textarea className="form-control" value={text} style={{ color: colorChange.color }} onChange={handleOnChange} id="myText" rows="10"></textarea>
         <button className="btn btn-primary my-3 mx-2" onClick={handleOnClick}>Click Here for upper case</button>
         <button className="btn btn-primary my-3 mx-2" onClick={clickOnHandle}>Click here for lower case</button>
-        
         <button className="btn btn-primary my-3 mx-2" onClick={clickOnClear}>Clear</button>
+        <button className="btn btn-primary my-3 mx-2" onClick={colorChanger}>{btnc}</button>
         </div>
         <div className='container '>
         <h2>Summary of the above text box</h2>
@@ -36,3 +53,4 @@ export default function Textarea(props) {
         </>
   )
 }
+
