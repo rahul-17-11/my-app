@@ -9,6 +9,9 @@ export default function Textarea(props) {
         let lowertext = text.toLowerCase();
         setText(lowertext)
     }
+    const clickOnClear = ()=>{
+        setText("")
+    }
     const handleOnChange = (event)=>{
         setText(event.target.value)
     }
@@ -20,6 +23,8 @@ export default function Textarea(props) {
         <textarea className="form-control" value={text} onChange={handleOnChange} id="myText" rows="10"></textarea>
         <button className="btn btn-primary my-3 mx-2" onClick={handleOnClick}>Click Here for upper case</button>
         <button className="btn btn-primary my-3 mx-2" onClick={clickOnHandle}>Click here for lower case</button>
+        
+        <button className="btn btn-primary my-3 mx-2" onClick={clickOnClear}>Clear</button>
         </div>
         <div className='container '>
         <h2>Summary of the above text box</h2>
