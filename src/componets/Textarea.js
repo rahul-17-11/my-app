@@ -15,6 +15,7 @@ export default function Textarea(props) {
     const [colorChange,setColorChange] = useState({
         color:'black'
     })
+    const [btnc,setBtnc] = useState("Change color to red")
     const colorChanger = ()=>{
         if(colorChange.color === 'red'){
             setColorChange({
@@ -28,7 +29,6 @@ export default function Textarea(props) {
             setBtnc("Change color to black")
         }
     }
-    const [btnc,setBtnc] = useState("Change color to red")
     const handleOnChange = (event)=>{
         setText(event.target.value)
     }
